@@ -23,6 +23,7 @@ module Ledger.Constraints(
     , TC.mustPayToOtherScript
     , TC.mustHashDatum
     , TC.mustSatisfyAnyOf
+    , TC.mustIncludeMetadata
     -- * Queries
     , TC.modifiesUtxoSet
     , TC.isSatisfiable

@@ -75,16 +75,16 @@ source-repository-package
 -- Direct dependency.
 source-repository-package
   type: git
-  location: https://github.com/input-output-hk/plutus
-  tag: cc72a56eafb02333c96f662581b57504f8f8992f
+  location: https://github.com/mlabs-haskell/plutus
+  tag: 1a3c3a761cf048371c52a34b004f8b3fcf0dab43
   subdir:
-    plutus-core
     plutus-ledger-api
-    plutus-tx
-    plutus-tx-plugin
+    word-array
     prettyprinter-configurable
     stubs/plutus-ghc-stub
-    word-array
+    plutus-core
+    plutus-tx
+    plutus-tx-plugin
 
 -- Should follow plutus.
 source-repository-package
