@@ -18,7 +18,7 @@ import Ledger qualified
 import Ledger.Address (PaymentPubKeyHash (PaymentPubKeyHash, unPaymentPubKeyHash))
 import Ledger.Constraints.TxConstraints (InputConstraint (InputConstraint, icTxOutRef),
                                          OutputConstraint (OutputConstraint, ocDatum, ocValue),
-                                         TxConstraint (MustBeSignedBy, MustHashDatum, MustIncludeDatum, MustMintValue, MustPayToOtherScript, MustPayToPubKeyAddress, MustProduceAtLeast, MustSatisfyAnyOf, MustSpendAtLeast, MustSpendPubKeyOutput, MustSpendScriptOutput, MustValidateIn),
+                                         TxConstraint (MustBeSignedBy, MustHashDatum, MustIncludeDatum, MustIncludeMetadata, MustMintValue, MustPayToOtherScript, MustPayToPubKeyAddress, MustProduceAtLeast, MustSatisfyAnyOf, MustSpendAtLeast, MustSpendPubKeyOutput, MustSpendScriptOutput, MustValidateIn),
                                          TxConstraints (TxConstraints, txConstraints, txOwnInputs, txOwnOutputs))
 import Ledger.Value qualified as Value
 import Plutus.V1.Ledger.Ada qualified as Ada
@@ -115,6 +115,7 @@ checkTxConstraint ctx@ScriptContext{scriptContextTxInfo} = \case
     MustSatisfyAnyOf xs ->
         traceIfFalse "Ld" -- "MustSatisfyAnyOf"
         $ any (all (checkTxConstraint ctx)) xs
+    MustIncludeMetadata _ -> True
 
 {-# INLINABLE checkScriptContext #-}
 -- | Does the 'ScriptContext' satisfy the constraints?

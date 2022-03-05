@@ -1,5 +1,5 @@
 -- Bump this if you need newer packages
-index-state: 2021-10-20T00:00:00Z
+index-state: 2021-11-18T00:00:00Z
 
 packages: doc
           freer-extras
@@ -241,8 +241,8 @@ source-repository-package
 -- are also updated
 source-repository-package
  type: git
- location: https://github.com/input-output-hk/plutus
- tag: 65bad0fd53e432974c3c203b1b1999161b6c2dce
+ location: https://github.com/t4ccer/plutus
+ tag: 1a3c3a761cf048371c52a34b004f8b3fcf0dab43
  subdir:
    plutus-ledger-api
    word-array

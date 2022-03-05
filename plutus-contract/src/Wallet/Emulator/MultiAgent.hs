@@ -292,6 +292,7 @@ emulatorStateInitialDist mp = emulatorStatePool [tx] where
             , txSignatures = mempty
             , txRedeemers = mempty
             , txData = mempty
+            , txMetadata = Nothing
             }
 
 type MultiAgentEffs =
